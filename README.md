@@ -1,67 +1,81 @@
-# react-native-navigation-bootstrap
+## Introduction
 
-## Bootstrap for a vanilla `react-native-navigation` based project
+Together, we're going to build a very simple app that exposes us to the most basic 
+components of a React Native developer's toolkit. We'll work through some of the steps 
+together and leave some for you to try on your own. 
 
-Clone this repository to start a project based on 
+Every step has an accompanying branch in this repo that contains all of the code for the tasks up to (and including)
+that step. If necessary, you can check out a step's branch to see a potential solution
+or to skip to a later step.
 
-```
-react@15.4.2
-react-native@0.42.0
-react-native-navigation@next
-```
+###Setup
 
+Before beginning, please make sure you have your environment set up for React Native development.
+If you have any trouble, just ask for help.
 
-Check `react-native-navigation`'s [documentation](https://github.com/wix/react-native-navigation/wiki) for usage details.
+The complete instructions can be found on React Native’s website: 
+https://facebook.github.io/react-native/docs/getting-started.html#content. 
+Notice that there are separate tabs for iOS and Android. You should set up both of them.
+The basic idea is as follows: 
 
+####Install
 
-### preparing your project
+1. Xcode (This takes a long time to download…)
+1. Android Studio (This also takes quite a while…)
+1. `brew install node`
+1. `brew install watchman`
+1. `npm install -g react-native-cli`
 
-Download npm dependencies:
+####Test
 
-```sh
-npm install
--or-
-yarn
-```
+1. `react-native init TestProject`
+1. `cd TestProject`
+1. `react-native run-ios`
+1. `react-native run-android`
 
-##### You would need to setup gradle to automatically download android dependencies
-```sh
-./scripts/android_licenses.sh
-```
+All works? Great! Now go ahead and clone this repo and navigate to the created directory.
 
+## Step 0 - First Steps
 
+1. Initialize an empty React Native project called `MemeBuilder`
+1. Run the project in both Android and iOS to verify it works
+1. Make a trivial change to the text in each of the views and see it update
+1. Notice that these two apps look almost the same? Let's share the code by
+extracting it to its own component call `HomeScreen`. We'll put it in a directory called `src`.
+1. Get comfortable with the parts of the project - make sure to understand what all the major parts do
+1. Get comfortable with basic debugging tools - you're going to need them.
 
-### Running your project
+## Step 1 - Include an Image
 
-From project dir, run:
+1. Replace the default text in the app with an image. The image
+should be centered both vertically and horizontally on the screen.
+1. While you're at it, simplify `HomeScreen` to be a stateless functional component.
 
-#### iOS
-1. Build and run (this will start a simulator if not already started)
+## Step 2 - Code Reuse and Platform Specific Code
 
-	```sh
-	react-native run-ios
-	```
-	This would also start a packager if not already started
+1. Add a message to the bottom of `HomeScreen` informing the user what platform they're using. Use the `Platform` module.
+1. Change the background color of the app - use different colors for Android and iOS. Do this by importing a separate module with theming in it that can be configured differently for Android and iOS.
+1. Add a simple input box to `HomeScreen`. Don't worry about connecting it to anything,
+we'll do that later. Create separate components for iOS and Android and style them differently.
 
-2. Set your Simulator to live reload changes `⌘`+`d`  (`cmd`+`d`) => `Enable Live Reload`
+## Step 3 - ListView
 
+1. There should be a `ListView` on the screen displaying a list of images.
+1. When tapping an image, print the image data to the console. (Use either `TouchableOpacity` or `TouchableHighlight`. Try them both to see what you like better.)
 
+## Step 4 - Navigation
 
-#### Android
-1. Start an emulator
-2. Build and run
+1. Add simple navigation to the app. When tapping an image, push a screen
+with just that image centered in middle of the screen.
 
-	```sh
-	react-native run-android
-	```
-	This would also start a packager if not already started
+## Step 5 - Build Memes!!
 
+1. Add two text inputs on top for the user to type text
+1. Superimpose the text on the images - color the text white on a background of 50% opaque black
 
-3. Set your Emulator to live reload changes `⌘`+`m`  (`cmd`+`m`) => `Enable Hot Reloading`
+## Step 6 - Refactor/Styling/UX
 
-To open packager manually, from project dir run:
-
-```sh
-react-native start
-```
-
+1. Organize your code into folders and clean it up if you think it could be better organized. Use stateless functional components where possible.
+1. Use flexbox to take up the full width of `HomeScreen` by wrapping the images into a grid instead of a simple list
+https://github.com/yelled3/react-native-grid-example
+1. Add a back button to the MemeBuilder screen

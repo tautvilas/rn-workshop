@@ -5,6 +5,6 @@ Navigation.registerComponent('react-native-navigation-bootstrap', () => HomeScre
 Navigation.startSingleScreenApp({
   screen: {
     screen: 'react-native-navigation-bootstrap',
-    title: 'Navigation Bootstrap'
+    title: 'Meme Builder'
   }
 });

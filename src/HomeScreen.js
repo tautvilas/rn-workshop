@@ -3,16 +3,20 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
+  Dimensions
 } from 'react-native';
 
 class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Hello World!
-        </Text>
+        <Image
+          style={{height: 250, width: Dimensions.get('window').width}}
+          resizeMode={'cover'}
+          source={{uri: 'https://www.placecage.com/c/500/500'}}
+        />
       </View>
     );
   }

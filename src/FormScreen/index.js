@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {
   View,
-  Text
+  Text,
+  TextInput
 } from 'react-native';
 
-import style from './style';
+import styles from './style';
 
 class ReactComp extends Component {
   constructor(props) {
@@ -13,12 +14,25 @@ class ReactComp extends Component {
     };
   }
 
-  // componentWillMount() {}
-
   render() {
     return (
-      <View style={style.container}>
-        <Text>Hello world</Text>
+      <View style={styles.container}>
+        <View style={styles.input}>
+          <Text>Image header</Text>
+          <TextInput
+            style={styles.inputField}
+            onChangeText={(imageHeader) => this.setState({imageHeader})}
+            value={this.state.text}
+          />
+        </View>
+        <View style={styles.input}>
+          <Text>Image footer</Text>
+          <TextInput
+            style={styles.inputField}
+            onChangeText={(imageFooter) => this.setState({imageFooter})}
+            value={this.state.text}
+          />
+        </View>
       </View>
     );
   }

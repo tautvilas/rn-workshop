@@ -1,5 +1,5 @@
 import {Navigation} from 'react-native-navigation';
-import HomeScreen from './src/HomeScreen';
+import {HomeScreen} from './src/HomeScreen';
 
 Navigation.registerComponent('react-native-navigation-bootstrap', () => HomeScreen);
 Navigation.startSingleScreenApp({

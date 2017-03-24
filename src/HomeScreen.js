@@ -1,38 +1,58 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
-  ScrollView,
+  ListView,
   Image,
   Dimensions
 } from 'react-native';
 
 class HomeScreen extends Component {
+  constructor() {
+    super();
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.uri !== r2.uri});
+    this.state = {
+      dataSource: ds.cloneWithRows([
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/500/500'},
+        {uri: 'https://www.placecage.com//500/500'},
+      ]),
+    };
+  }
+  renderRow(rowData) {
+    return (
+      <Image
+        style={{height: 250, width: Dimensions.get('window').width}}
+        resizeMode={'cover'}
+        source={{uri: rowData.uri}}
+      />
+    );
+  }
+
   render() {
     return (
-      <ScrollView style={styles.container}>
-        <Image
-          style={{height: 250, width: Dimensions.get('window').width}}
-          resizeMode={'cover'}
-          source={{uri: 'https://www.placecage.com/c/500/500'}}
-        />
-        <Image
-          style={{height: 250, width: Dimensions.get('window').width}}
-          resizeMode={'cover'}
-          source={{uri: 'https://www.placecage.com/c/600/500'}}
-        />
-        <Image
-          style={{height: 250, width: Dimensions.get('window').width}}
-          resizeMode={'cover'}
-          source={{uri: 'https://www.placecage.com/c/700/500'}}
-        />
-        <Image
-          style={{height: 250, width: Dimensions.get('window').width}}
-          resizeMode={'cover'}
-          source={{uri: 'https://www.placecage.com/c/1000/500'}}
-        />
-      </ScrollView>
+      <ListView
+        style={styles.container}
+        dataSource={this.state.dataSource}
+        renderRow={this.renderRow}
+      />
     );
   }
 }

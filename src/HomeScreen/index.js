@@ -4,7 +4,8 @@ import {
   ListView,
   Image,
   Dimensions,
-  TouchableOpacity
+  TouchableOpacity,
+  View
 } from 'react-native';
 import styles from './style';
 
@@ -47,6 +48,12 @@ class HomeScreen extends Component {
     });
   };
 
+  pushCameraScreen() {
+    this.props.navigator.push({
+      screen: 'CameraScreen'
+    });
+  };
+
   renderRow(rowData) {
     return (
       <TouchableOpacity onPress={this.pushFormScreen.bind(this, rowData)}>
@@ -61,11 +68,15 @@ class HomeScreen extends Component {
 
   render() {
     return (
-      <ListView
-        style={styles.container}
-        dataSource={this.state.dataSource}
-        renderRow={this.renderRow.bind(this)}
-      />
+      <View style={styles.container}>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderRow.bind(this)}
+        />
+        <TouchableOpacity onPress={this.pushCameraScreen.bind(this)} style={styles.button}>
+          <Text style={styles.buttonText}>Take Picture</Text>
+        </TouchableOpacity>
+      </View>
     );
   }
 }

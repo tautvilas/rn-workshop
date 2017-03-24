@@ -43,7 +43,7 @@ class ReactComp extends Component {
             source={{uri: this.props.image.uri}}
           />
           <Text style={[styles.memeText, styles.headerText]}>{this.state.imageHeader.toUpperCase()}</Text>
-          <Text style={[styles.memeText, styles.footerText]}>{this.state.imageFooter}</Text>
+          <Text style={[styles.memeText, styles.footerText]}>{this.state.imageFooter.toUpperCase()}</Text>
         </View>
       </View>
     );

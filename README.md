@@ -8,7 +8,7 @@ Every step has an accompanying branch in this repo that contains all of the code
 that step. If necessary, you can check out a step's branch to see a potential solution
 or to skip to a later step.
 
-###Setup
+### Setup
 
 Before beginning, please make sure you have your environment set up for React Native development.
 If you have any trouble, just ask for help.
@@ -18,7 +18,7 @@ https://facebook.github.io/react-native/docs/getting-started.html#content.
 Notice that there are separate tabs for iOS and Android. You should set up both of them.
 The basic idea is as follows: 
 
-####Install
+#### Install
 
 1. Xcode (This takes a long time to download…)
 1. Android Studio (This also takes quite a while…)
@@ -26,7 +26,7 @@ The basic idea is as follows:
 1. `brew install watchman`
 1. `npm install -g react-native-cli`
 
-####Test
+#### Test
 
 1. `react-native init TestProject`
 1. `cd TestProject`

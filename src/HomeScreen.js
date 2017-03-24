@@ -3,7 +3,7 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
+  ScrollView,
   Image,
   Dimensions
 } from 'react-native';
@@ -11,23 +11,35 @@ import {
 class HomeScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Image
           style={{height: 250, width: Dimensions.get('window').width}}
           resizeMode={'cover'}
           source={{uri: 'https://www.placecage.com/c/500/500'}}
         />
-      </View>
+        <Image
+          style={{height: 250, width: Dimensions.get('window').width}}
+          resizeMode={'cover'}
+          source={{uri: 'https://www.placecage.com/c/600/500'}}
+        />
+        <Image
+          style={{height: 250, width: Dimensions.get('window').width}}
+          resizeMode={'cover'}
+          source={{uri: 'https://www.placecage.com/c/700/500'}}
+        />
+        <Image
+          style={{height: 250, width: Dimensions.get('window').width}}
+          resizeMode={'cover'}
+          source={{uri: 'https://www.placecage.com/c/1000/500'}}
+        />
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flex: 1
   },
   welcome: {
     fontSize: 20,

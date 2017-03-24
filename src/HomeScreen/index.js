@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   Text,
   ListView,
   Image,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from 'react-native';
+import styles from './style';
 
 class HomeScreen extends Component {
   constructor() {
@@ -36,13 +37,22 @@ class HomeScreen extends Component {
       ]),
     };
   }
+
+  pushFormScreen(data) {
+    this.props.navigator.push({
+      screen: 'MemeFormScreen'
+    });
+  };
+
   renderRow(rowData) {
     return (
-      <Image
-        style={{height: 250, width: Dimensions.get('window').width}}
-        resizeMode={'cover'}
-        source={{uri: rowData.uri}}
-      />
+      <TouchableOpacity onPress={this.pushFormScreen.bind(this, rowData)}>
+        <Image
+          style={{height: 250, width: Dimensions.get('window').width}}
+          resizeMode={'cover'}
+          source={{uri: rowData.uri}}
+        />
+      </TouchableOpacity>
     );
   }
 
@@ -51,26 +61,10 @@ class HomeScreen extends Component {
       <ListView
         style={styles.container}
         dataSource={this.state.dataSource}
-        renderRow={this.renderRow}
+        renderRow={this.renderRow.bind(this)}
       />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 export default HomeScreen;

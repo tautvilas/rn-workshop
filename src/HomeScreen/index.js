@@ -16,8 +16,8 @@ class HomeScreen extends Component {
       dataSource: ds.cloneWithRows([
         {uri: 'https://www.placecage.com/c/500/500'},
         {uri: 'https://www.placecage.com//500/500'},
-        {uri: 'https://www.placecage.com/c/500/500'},
-        {uri: 'https://www.placecage.com//500/500'},
+        {uri: 'https://www.placecage.com/c/750/500'},
+        {uri: 'https://www.placecage.com//800/500'},
         {uri: 'https://www.placecage.com/c/500/500'},
         {uri: 'https://www.placecage.com//500/500'},
         {uri: 'https://www.placecage.com/c/500/500'},
@@ -40,7 +40,10 @@ class HomeScreen extends Component {
 
   pushFormScreen(data) {
     this.props.navigator.push({
-      screen: 'MemeFormScreen'
+      screen: 'MemeFormScreen',
+      passProps: {
+        image: data
+      }
     });
   };
 

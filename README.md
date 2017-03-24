@@ -73,4 +73,4 @@ extracting it to its own component call `HomeScreen`. We'll put it in a director
 ## Step 7 - Platform specific and native code
 
 1. Add a button 'take photo' to home screen
-2. Integrate your app with [react-native-camera(https://github.com/lwansbrough/react-native-camera) and push camera screen on button press. (Don't forget to give the app camera permissions first)
+2. Integrate your app with [react-native-camera](https://github.com/lwansbrough/react-native-camera) and push camera screen on button press. (Don't forget to give the app camera permissions first)

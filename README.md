@@ -37,7 +37,6 @@ All works? Great! Now go ahead and clone this repo and navigate to the created d
 
 ## Step 0 - First Steps
 
-1. Initialize an empty React Native project called `MemeBuilder`
 1. Run the project in both Android and iOS to verify it works
 1. Make a trivial change to the text in each of the views and see it update
 1. Notice that these two apps look almost the same? Let's share the code by
@@ -47,35 +46,31 @@ extracting it to its own component call `HomeScreen`. We'll put it in a director
 
 ## Step 1 - Include an Image
 
-1. Replace the default text in the app with an image. The image
-should be centered both vertically and horizontally on the screen.
-1. While you're at it, simplify `HomeScreen` to be a stateless functional component.
+1. Replace the default text in the app with an image. The image width should be stretched to screen width.
 
-## Step 2 - Code Reuse and Platform Specific Code
+## Step 2 - Add multiple to a ScrollView
 
-1. Add a message to the bottom of `HomeScreen` informing the user what platform they're using. Use the `Platform` module.
-1. Change the background color of the app - use different colors for Android and iOS. Do this by importing a separate module with theming in it that can be configured differently for Android and iOS.
-1. Add a simple input box to `HomeScreen`. Don't worry about connecting it to anything,
-we'll do that later. Create separate components for iOS and Android and style them differently.
+1. Add multiple images in home screen
+1. Put them in ScrollView for a nice scrolling effect
 
 ## Step 3 - ListView
 
-1. There should be a `ListView` on the screen displaying a list of images.
-1. When tapping an image, print the image data to the console. (Use either `TouchableOpacity` or `TouchableHighlight`. Try them both to see what you like better.)
+1. Replace `ScrollView` with `ListView`.
 
 ## Step 4 - Navigation
 
-1. Add simple navigation to the app. When tapping an image, push a screen
-with just that image centered in middle of the screen.
+1. Add simple navigation to the app. When tapping an image, push an emty screen
 
-## Step 5 - Build Memes!!
+## Step 5 - Text input
 
-1. Add two text inputs on top for the user to type text
-1. Superimpose the text on the images - color the text white on a background of 50% opaque black
+1. Add two text inputs on top for the user to type text in  the form screen
 
-## Step 6 - Refactor/Styling/UX
+## Step 6 - Build memes!
 
-1. Organize your code into folders and clean it up if you think it could be better organized. Use stateless functional components where possible.
-1. Use flexbox to take up the full width of `HomeScreen` by wrapping the images into a grid instead of a simple list
-https://github.com/yelled3/react-native-grid-example
-1. Add a back button to the MemeBuilder screen
+1. Pass selected image data to FormScreen
+2. Overimpose typed text on image
+
+## Step 7 - Platform specific and native code
+
+1. Add a button 'take photo' to home screen
+2. Integrate your app with [react-native-camera(https://github.com/lwansbrough/react-native-camera) and push camera screen on button press. (Don't forget to give the app camera permissions first)

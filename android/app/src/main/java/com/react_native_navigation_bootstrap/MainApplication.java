@@ -5,7 +5,10 @@ import android.support.annotation.NonNull;
 import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;
 
+import com.lwansbrough.RCTCamera.RCTCameraPackage;
+
 import java.util.List;
+import java.util.Arrays;
 
 public class MainApplication extends NavigationApplication {
 
@@ -19,7 +22,7 @@ public class MainApplication extends NavigationApplication {
   public List<ReactPackage> createAdditionalReactPackages() {
     // Add the packages you require here.
     // No need to add RnnPackage and MainReactPackage
-    return null;
+    return Arrays.<ReactPackage>asList(new RCTCameraPackage());
   }
 
 }

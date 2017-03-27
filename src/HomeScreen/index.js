@@ -50,12 +50,25 @@ class HomeScreen extends Component {
     );
   }
 
+  openCamera() {
+    this.props.navigator.push({
+      screen: 'CameraScreen'
+    });
+  }
+
   render() {
     return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={this.renderListItem.bind(this)}
-      />
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderListItem.bind(this)}
+        />
+        <View style={styles.buttonWrapper}>
+          <TouchableOpacity style={styles.button} onPress={this.openCamera.bind(this)}>
+            <Text style={styles.buttonText}>Take Photo</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     );
   }
 }

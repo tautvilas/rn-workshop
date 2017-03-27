@@ -38,12 +38,16 @@ class FormScreen extends Component {
         />
         <View style={styles.imageWrapper}>
           <Image source={this.props.imageData} style={styles.image} />
-          <Text style={[styles.memeText, styles.headerText, {color: this.state.textColor.toLowerCase()}]}>
-            {this.state.memeHeader.toUpperCase()}
-          </Text>
-          <Text style={[styles.memeText, styles.footerText, {color: this.state.textColor.toLowerCase()}]}>
-            {this.state.memeFooter.toUpperCase()}
-          </Text>
+          <View style={styles.textsWrapper}>
+            <Text style={[styles.memeText, styles.headerText, {color: this.state.textColor.toLowerCase()}]}>
+              {this.state.memeHeader.toUpperCase()}
+            </Text>
+          </View>
+          <View style={styles.textsWrapper2}>
+            <Text style={[styles.memeText, styles.footerText, {color: this.state.textColor.toLowerCase()}]}>
+              {this.state.memeFooter.toUpperCase()}
+            </Text>
+          </View>
         </View>
       </View>
     );

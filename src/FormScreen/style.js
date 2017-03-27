@@ -25,15 +25,27 @@ export default StyleSheet.create({
     marginTop: 25,
     alignItems: 'center'
   },
-  memeText: {
+  textsWrapper: {
     position: 'absolute',
+    alignItems: 'center',
+    top: 15,
+    left: 0,
+    right: 0
+  },
+  textsWrapper2: {
+    position: 'absolute',
+    alignItems: 'center',
+    bottom: 15,
+    left: 0,
+    right: 0
+  },
+  memeText: {
     fontSize: 20,
     fontWeight: '900',
     color: 'white',
     backgroundColor: 'rgba(255, 255, 255, 0)',
     textAlign: 'center',
-    left: 0,
-    right: 0
+    width: 250
   },
   headerText: {
     top: 15
